@@ -41,7 +41,14 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "https://blockchain-quiz-tornado-cash.vercel.app",
+        "https://blockchain-quiz-tornado-cash-git-main-muhammad-kamrans-projects-80d46728.vercel.app",
+        "https://zk-privacy-mixer.vercel.app",
+    ],
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
